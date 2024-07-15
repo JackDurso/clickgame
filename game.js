@@ -1,4 +1,5 @@
 const widgetContainer = document.getElementById("widget-container");
+const goalText = document.getElementById("goal-text")
 
 function buy(store) {
     let bank = parseInt(score.innerHTML);
@@ -51,6 +52,10 @@ function harvest(widget) {
 function changeScore(amount) {
     score.innerHTML = parseInt(score.innerHTML) + parseInt(amount);
 
+    if (score >= 100){
+        goalText.innerHTML = ("You Win! Keep playing")
+    }
+
     // Update the stores to block buying expensive boxes
     for (let store of stores){
         let bank = parseInt(score.innerHTML);
@@ -63,9 +68,7 @@ function changeScore(amount) {
         }
     }
 
-    if (score >= 100000000){
-        Text.innerHTML = ("You Win! Keep playing")
-    }
+    
 
 }
 
