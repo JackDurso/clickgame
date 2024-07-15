@@ -62,6 +62,11 @@ function changeScore(amount) {
             store.removeAttribute("broke");
         }
     }
+
+    if (score >= 100000000){
+        Text.innerHTML = ("You Win! Keep playing")
+    }
+
 }
 
 function showPoint(widget) {
