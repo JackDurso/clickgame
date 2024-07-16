@@ -1,6 +1,7 @@
 const widgetContainer = document.getElementById("widget-container");
 const goalText = document.getElementById("goal-text")
-
+const sound = document.getElementById("my-audio");
+const sound2 = document.getElementById("audio-2");
 function buy(store) {
     let bank = parseInt(score.innerHTML);
     let cost = parseInt(store.getAttribute("cost"));
@@ -12,6 +13,7 @@ function buy(store) {
     }
 
     changeScore(-1 * cost);
+    playAudio();
 
 
 
@@ -25,6 +27,14 @@ function buy(store) {
     if (widget.getAttribute("auto") == 'true') harvest(widget)
 }
 
+function playAudio() {
+    sound.play();
+}
+
+function playAudio2() {
+    sound2.play();
+}
+
 function harvest(widget) {
     // Only run if currently not harvesting
     if (widget.hasAttribute("harvesting")) return
@@ -35,6 +45,7 @@ function harvest(widget) {
     if (widget.getAttribute("auto") != 'true') {
         changeScore(widget.getAttribute("reap"));
         showPoint(widget);
+        
     }
 
     setTimeout(() => {
@@ -47,12 +58,13 @@ function harvest(widget) {
             harvest(widget)
         }
     }, parseFloat(widget.getAttribute("cooldown")) * 1000);
+    playAudio2()
 }
 
 function changeScore(amount) {
     score.innerHTML = parseInt(score.innerHTML) + parseInt(amount);
 
-    if (score >= 100){
+    if (parseInt(score.innerHTML) >= 100000000000){
         goalText.innerHTML = ("You Win! Keep playing")
     }
 

@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <audio id="my-audio">
+        <source src ="minecraft-anvil-loud.mp3"
+        type="audio/mpeg">
+        
+    </audio>
+    <audio id="audio-2">
+        <source src ="minecraft-sheep2.mp3"
+        type="audio/mpeg">
+    </audio>
     <h1>Gompei's Lawn Mowing Simulator</h1>
     <h2>Score: <span id="score">5</span></h2>
     <h2 id="goal-text" style="color:white">Goal: 100,000,000,000</h2>
@@ -22,6 +32,12 @@
         src="images/chart-with-upwards-trend-lawnmower.jpg"></div>
         <div class="store" name="&#128201 gompei" cost="10000" reap="300" cooldown="5.0" auto="true"
         src="./gompei.png" imgstyle="filter: hue-rotate(180deg);"></div>
+        <div class="store" name="&#128200 autoMower" cost="1000" reap="1000" cooldown="0.1" auto="true"
+        src="images/chart-with-upwards-trend-lawnmower.jpg" imgstyle="filter: hue-rotate(270deg);"></div>
+        <div class="store" name="&#128200 autoMower 2.0" cost="100000" reap="10000" cooldown="0.01" auto="true"
+        src="images/chart-with-upwards-trend-lawnmower.jpg" imgstyle="filter: hue-rotate(300deg);"></div>
+        <div class="store" name="Super Scissors" cost="100000000" reap="9999999999" cooldown="0.0001" auto="true"
+        src="images/scissors.jpg" imgstyle="filter: hue-rotate(270deg);"></div>
     </div>
     <div id="widget-container"></div>
     
