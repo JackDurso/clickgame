@@ -13,7 +13,7 @@ function buy(store) {
     }
 
     changeScore(-1 * cost);
-    playAudio();
+    // playAudio();
 
 
 
